@@ -23,14 +23,8 @@ jobs:
         with:
           gradle-version: "8.12"
 
-      - name: Unpack the project zip from the repo
-        run: |
-          mkdir project
-          unzip -q ./*.zip -d project
-
       - name: Build
         run: |
-          cd project/*/
           gradle build --no-daemon
           rm -f build/libs/*-sources.jar
 
@@ -39,4 +33,4 @@ jobs:
         with:
           tag_name: build-${{ github.run_number }}
           name: Input Overlay build ${{ github.run_number }}
-          files: project/*/build/libs/*.jar
+          files: build/libs/*.jar
