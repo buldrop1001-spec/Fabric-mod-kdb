@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "inputoverlay",
+  "version": "${version}",
+  "name": "Input Overlay",
+  "description": "Client-side keyboard and mouse input overlay with a movement indicator.",
+  "authors": ["You"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["dev.inputoverlay.InputOverlayClient"],
+    "modmenu": ["dev.inputoverlay.compat.ModMenuIntegration"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.10",
+    "minecraft": "~1.21.4",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
